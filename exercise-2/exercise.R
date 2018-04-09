@@ -5,7 +5,7 @@
 # "Employee"
 num <- 1:100
 employees <- paste("Employee",num)
-  ``
+
 # Create a vector of 100 random salaries for the year 2017
 # Use the `runif()` function to pick random numbers between 40000 and 50000
 salary_2017 <- runif(100, min=40000, max=50000)
@@ -32,32 +32,32 @@ salaries$got_raise <- salaries$salary_2018>salaries$salary_2017
 ### cell rather than the whole row!)
 
 # What was the 2018 salary of employee 57
-salaries[5,'salary_2018']
+salary_57 <-salaries[salaries$employees == "Employees 57","salary_2018"]
 
 # How many employees got a raise?
-nrow(salaries[salaries$got_raise=="TRUE",])
+nrow(salaries[salaries$got_raise==TRUE,])
 
 # What was the dollar value of the highest raise?
-max(salaries$change)
+highest_raise <- max(salaries$change)
 
 # What was the "name" of the employee who received the highest raise?
-
+got_biggest_raise <- salaries[salaries$change == highest_raise, "employees"]
 
 # What was the largest decrease in salaries between the two years?
-min(salaries$change)
+biggest_paycut <- min(salaries$change)
 
 # What was the name of the employee who recieved largest decrease in salary?
-
+got_biggest_paycut <- salaries[salaries$change == biggest_paycut, "employees"]
 
 # What was the average salary change?
 mean(salaries$change)
 
 # For people who did not get a raise, how much money did they lose on average?
-no_raise <- salaries[salaries$got_raise=="FALSE",]
-mean(no_raise$change)
+no_raise <- mean(salaries$change[salaries$got_raise==FALSE])
+mean(no_raise)
 
 ## Consider: do the above averages match what you expected them to be based on 
 ## how you generated the salaries?
 
 # Write a .csv file of your salary data to your working directory
-
+write.csv
