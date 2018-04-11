@@ -43,8 +43,8 @@ highest_1960 <- US_PE$category[US_PE$X1960 == max(US_PE$X1960)] # alternative wa
 # returns the lowest spending category of that year
 lowest_category <- function(year) {
   col <- paste0("X",year)
-  lowest_spending <- min(US_PE$col)
-  sentence <- US_PE[US_PE$col == lowest_spending, "category"]
+  lowest_spending <- min(US_PE[[col]])
+  sentence <- US_PE[US_PE[[col]] == lowest_spending, "category"] #col is a string, so u cant use $ with a string. Must use double bracket. 
   return(sentence)
 }
 

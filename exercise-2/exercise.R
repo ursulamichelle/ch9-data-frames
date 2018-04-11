@@ -60,4 +60,4 @@ mean(no_raise)
 ## how you generated the salaries?
 
 # Write a .csv file of your salary data to your working directory
-write.csv
+write.csv(salaries)
